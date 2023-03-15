@@ -20,14 +20,19 @@
       left: 50%;
       text-transform: uppercase;
       transform: translate(-50%, -50%);
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <h1>
-    <span id="answer">
+    <span id="answer" onclick="audio.play();">
       Non
     </span>
   </h1>
 </body>
+<script type="text/javascript">
+    const audio = new Audio();
+    audio.src = './surprise.mp3';
+</script>
 </html>
