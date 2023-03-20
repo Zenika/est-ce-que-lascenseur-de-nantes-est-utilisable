@@ -1,0 +1,27 @@
+name: Set evelvator to usable
+on:
+  issues:
+    types:
+      - [closed]
+
+jobs:
+  build:
+    name: Evelvator to usable
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: setup git config
+        run: |
+          # setup the username and email
+          git config user.name "Zenika Nantes Evevator bot"
+          git config user.email "<>"
+      
+      - name: Update elevator state
+        run: |
+          $VAL=$(cat variables.js)
+          echo "${VAL/Non/Oui}" > variables.js
+          git add .
+          git commit -m "set evelvator to usable"
+          git push origin main
