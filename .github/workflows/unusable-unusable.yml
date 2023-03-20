@@ -1,11 +1,11 @@
-name: Set evelvator to unusable
+name: Set elevator to unusable
 on:
   issues:
     types: [opened]
 
 jobs:
   build:
-    name: Evelvator to unusable
+    name: Elevator to unusable
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
@@ -14,12 +14,12 @@ jobs:
       - name: setup git config
         run: |
           # setup the username and email
-          git config user.name "Zenika Nantes Evevator bot"
+          git config user.name "Zenika Nantes Elevator bot"
           git config user.email "<>"
       
       - name: Update elevator state
         run: |
-          echo 'window.STATIC_ANSWER = "Non"' > variables.js
+          sed -i 's/Oui/Non/' index.html
           git add .
-          git commit -m "set evelvator to unusable"
+          git commit -m "set elevator to unusable"
           git push origin main
