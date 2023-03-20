@@ -19,7 +19,7 @@ jobs:
       
       - name: Update elevator state
         run: |
-          $VAL=$(cat variables.js)
+          $VAL="$(cat variables.js)"
           echo "${VAL/Non/Oui}" > variables.js
           git add .
           git commit -m "set evelvator to usable"
