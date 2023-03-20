@@ -1,8 +1,7 @@
 name: Set evelvator to unusable
 on:
   issues:
-    types:
-      - [opened]
+    types: [opened]
 
 jobs:
   build:
