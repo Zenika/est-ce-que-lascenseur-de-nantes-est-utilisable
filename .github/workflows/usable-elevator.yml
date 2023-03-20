@@ -1,8 +1,7 @@
 name: Set evelvator to usable
 on:
   issues:
-    types:
-      - [closed]
+    types: [closed]
 
 jobs:
   build:
