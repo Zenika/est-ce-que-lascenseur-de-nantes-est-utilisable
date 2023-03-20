@@ -1,11 +1,11 @@
-name: Set evelvator to usable
+name: Set elevator to usable
 on:
   issues:
     types: [closed]
 
 jobs:
   build:
-    name: Evelvator to usable
+    name: Elevator to usable
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
@@ -14,12 +14,12 @@ jobs:
       - name: setup git config
         run: |
           # setup the username and email
-          git config user.name "Zenika Nantes Evevator bot"
+          git config user.name "Zenika Nantes Elevator bot"
           git config user.email "<>"
       
       - name: Update elevator state
         run: |
-          echo 'window.STATIC_ANSWER = "Oui"' > variables.js
+          sed -i 's/Non/Oui/' index.html
           git add .
-          git commit -m "set evelvator to usable"
+          git commit -m "set elevator to usable"
           git push origin main
