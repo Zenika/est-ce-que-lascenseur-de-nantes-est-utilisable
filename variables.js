@@ -1,1 +1,1 @@
-window.STATIC_ANSWER = "Oui"
+window.STATIC_ANSWER = "Non"
