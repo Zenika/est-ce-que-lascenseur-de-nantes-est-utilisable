@@ -19,7 +19,7 @@ jobs:
       
       - name: Update elevator state
         run: |
-          sed -i 's/Non/En maintenance mais fonctionne/' index.html
+          sed -i 's/Non/Fonctionne mais dangereux/' index.html
           git add .
           git commit -m "⚠️ set elevator to usable but dangerous"
           git push origin main
