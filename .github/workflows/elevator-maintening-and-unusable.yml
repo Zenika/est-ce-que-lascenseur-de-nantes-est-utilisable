@@ -1,0 +1,25 @@
+name: Set elevator to maintening unusable
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    name: Elevator to unusable but in maintenance
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: setup git config
+        run: |
+          # setup the username and email
+          git config user.name "Zenika Nantes Elevator bot"
+          git config user.email "<>"
+      
+      - name: Update elevator state
+        run: |
+          sed -i 's/Oui/Non mais en maintenance/' index.html
+          git add .
+          git commit -m "⚠️ set elevator to unusable but in maintenance"
+          git push origin main
